@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 1395979171}
   - component: {fileID: 1395979170}
   - component: {fileID: 1395979168}
+  - component: {fileID: 1395979169}
   m_Layer: 0
   m_Name: Eyelid
   m_TagString: Untagged
@@ -405,7 +406,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 44d2410f03efcaa4884c8089f8009ace, type: 2}
+  - {fileID: 2100000, guid: 192df1fd0363d294a9063eb2bced897a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -424,6 +425,23 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!95 &1395979169
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1395979167}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cff664eaa9e7d9e48b7dea718445d017, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!33 &1395979170
 MeshFilter:
   m_ObjectHideFlags: 0
