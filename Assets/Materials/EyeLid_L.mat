@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: EyeLid2
+  m_Name: EyeLid_L
   m_Shader: {fileID: 4800000, guid: 3398528e270af2b47949b162c6b26316, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -39,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 552e01e89f554cc4db5a9a0292629baf, type: 3}
+        m_Texture: {fileID: 2800000, guid: f2fbf07adaecdc640a46c7efa07b9da1, type: 3}
         m_Scale: {x: 0.25, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:

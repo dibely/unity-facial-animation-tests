@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Eye2
+  m_Name: Eye_L
   m_Shader: {fileID: 4800000, guid: 2ac2b3aa7758ff14ca9c30efcc2b3087, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -23,8 +23,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _OffsetX: 0.054
-    - _OffsetY: 0.003
+    - _OffsetX: 0
+    - _OffsetY: 0
     - _Shininess: 0.022928393
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 0.10980392}
