@@ -345,6 +345,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &438087627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 438087628}
+  m_Layer: 0
+  m_Name: Eye Point Of Interest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &438087628
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 438087627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 14.07, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &804297657
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +418,10 @@ MonoBehaviour:
   eyelids:
   - {fileID: 1395979167}
   - {fileID: 1629294523}
+  eyes:
+  - {fileID: 73718940}
+  - {fileID: 2140609463}
+  pointOfInterest: {fileID: 438087628}
 --- !u!1 &1050489646
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,7 +699,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b58212dc9e1ab0548b7a6980db7419af, type: 2}
+  - {fileID: 2100000, guid: 5657f700a1b7e3d4eac9cc7a189fe331, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
