@@ -56,11 +56,11 @@ public class EyesController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (eyelidAnimators.Length > 0) {
+        if (eyelidAnimators != null && eyelidAnimators.Length > 0) {
             UpdateEyelids();
         }
 
-        if (eyes.Length > 0) {
+        if (eyes != null && eyes.Length > 0) {
             UpdateEyes();
         }
     }
@@ -93,6 +93,7 @@ public class EyesController : MonoBehaviour {
         // Calculate the angle between the eye and target point and use that to offset the UV coords
         GameObject eye = eyes[index];
         Vector3 facing = eye.transform.forward;
+        Vector3 up = eye.transform.up;
         Vector3 directionToPointOfInterest = eye.transform.position - pointOfInterest.position;
 
         Vector3 directionXZ = new Vector3(directionToPointOfInterest.x, facing.y, directionToPointOfInterest.z);
@@ -102,7 +103,7 @@ public class EyesController : MonoBehaviour {
         directionY.Normalize();
 
         float productXZ = Vector3.Dot(directionXZ, facing);
-        float productY = Vector3.Dot(directionY, eye.transform.up);
+        float productY = Vector3.Dot(directionY, up);
 
         //Debug.Log("Facing = " + facing + " Up = " + eye.transform.up);
         //Debug.Log("XZ = " + productXZ + "("+ directionXZ + ")");
