@@ -1,4 +1,4 @@
-Shader "Custom/OctopusEyeLid"
+﻿Shader "Custom/OctopusEyeLid"
 {
 	Properties 
 	{
@@ -77,24 +77,15 @@ Shader "Custom/OctopusEyeLid"
 		void surf (Input IN, inout EditorSurfaceOutput o) {
 			o.Normal = float3(0.0,0.0,1.0);
 			o.Alpha = 1.0;
-			o.Albedo = 0.0;
 			o.Emission = 0.0;
-			o.Gloss = 0.0;
-			o.Specular = 0.0;
 			o.Custom = 0.0;
 				
-			float4 Tex2D0=tex2D(_EyeLidTexture,(IN.uv3_EyeLidTexture.xyxy).xy);
-			float4 Multiply0=_Color * Tex2D0;
-			float4 Splat0=_Color.w;
-			float4 Subtract0=Tex2D0.aaaa - float4( 0.5,0.5,0.5,0.5 );
-			float4 Master0_1_NoInput = float4(0,0,1,1);
-			float4 Master0_2_NoInput = float4(0,0,0,0);
-			float4 Master0_5_NoInput = float4(1,1,1,1);
-			float4 Master0_7_NoInput = float4(0,0,0,0);
-			clip( Subtract0 );
+			float4 Tex2D0=tex2D(_EyeLidTexture,IN.uv3_EyeLidTexture.xy);
+			clip(Tex2D0.a - 0.5);
+			float4 Multiply0 = _Color * Tex2D0;
 			o.Albedo = Multiply0;
 			o.Specular = _Shininess.xxxx;
-			o.Gloss = Splat0;
+			o.Gloss = _Color.w;
 			o.Normal = normalize(o.Normal);
 		}
 		ENDCG

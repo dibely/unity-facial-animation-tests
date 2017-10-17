@@ -1,4 +1,4 @@
-Shader "Eye"
+﻿Shader "Eye"
 {
 	Properties 
 	{
@@ -83,27 +83,17 @@ Shader "Eye"
 		void surf (Input IN, inout EditorSurfaceOutput o) {
 			o.Normal = float3(0.0,0.0,1.0);
 			o.Alpha = 1.0;
-			o.Albedo = 0.0;
 			o.Emission = 0.0;
-			o.Gloss = 0.0;
-			o.Specular = 0.0;
 			o.Custom = 0.0;
 				
-			float4 Split0=(IN.uv_MainTex.xyxy);
-			float4 Add0=_OffsetX.xxxx + float4( Split0.x, Split0.x, Split0.x, Split0.x);
-			float4 Add1=_OffsetY.xxxx + float4( Split0.y, Split0.y, Split0.y, Split0.y);
-			float4 Assemble0=float4(Add0.x, Add1.y, float4( Split0.z, Split0.z, Split0.z, Split0.z).z, float4( Split0.w, Split0.w, Split0.w, Split0.w).w);
-			float4 Tex2D0=tex2D(_MainTex,Assemble0.xy);
+			float2 Split0=(IN.uv_MainTex.xy);
+			float Add0=_OffsetX.x + Split0.x;
+			float Add1=_OffsetY.x + Split0.y;
+			float4 Tex2D0=tex2D(_MainTex, float2(Add0, Add1));
 			float4 Multiply0=_Color * Tex2D0;
-			float4 Splat0=_Color.w;
-			float4 Master0_1_NoInput = float4(0,0,1,1);
-			float4 Master0_2_NoInput = float4(0,0,0,0);
-			float4 Master0_5_NoInput = float4(1,1,1,1);
-			float4 Master0_7_NoInput = float4(0,0,0,0);
-			float4 Master0_6_NoInput = float4(1,1,1,1);
 			o.Albedo = Multiply0;
 			o.Specular = _Shininess.xxxx;
-			o.Gloss = Splat0;
+			o.Gloss = _Color.w;
 			o.Normal = normalize(o.Normal);
 		}
 		ENDCG
